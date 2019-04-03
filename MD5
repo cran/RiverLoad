@@ -1,4 +1,4 @@
-755db6eca1569d836e36af3b214adefb *DESCRIPTION
+62c495313dd1c3607050c77841349e63 *DESCRIPTION
 e09b43b07e71e9fba0f4568d87d8e8b0 *NAMESPACE
 ad5f0d5bd324b5b9df8161f172425f2b *R/CQregression.R
 9feeb571e5b73da44b88d1ed0a21d429 *R/annual.mean.R
@@ -28,7 +28,7 @@ e4176f7ea9d0eeec0d8777e779198b4a *data/conc.data2.rda
 ed5cd09d3698b3fa029477f5eb8995ea *data/flow.data1.rda
 c972505b2806412c021d4132795c1dae *data/flow.data2.rda
 19d4b978fce77874c732ce6da3f9dbf6 *data/flow.data3.rda
-3e4e698c954349dc1b359de693869268 *inst/CITATION
+a125743799eef5eadc21824e581bf8ee *inst/CITATION
 1d1abdf188af9f5d740b8d0a7abc6f7d *man/CQregression.Rd
 e77bdf616195c604899c04814d750aaf *man/annual.mean.Rd
 e086dec5078e8e10e4ad22504aa8c424 *man/beale.period.Rd

@@ -8,13 +8,13 @@ citEntry(entry = "Article",
                    as.person("Barbara Leoni")),
   journal      = "Environmental Modelling and Software",
   year         = "2019",
-  volume       = "",
+  volume       = "117",
   number       = "",
-  pages        = "",
-  url          = "",
+  pages        = "100-108",
+  url          = "https://doi.org/10.1016/j.envsoft.2019.03.012",
 
   textVersion  =
   paste("Veronica Nava, Martina Patelli, Marco Rotiroti, Barbara Leoni (2019).",
         "An R package for estimating river compound load using different methods.",
-        "Environmental Modelling and Software, SUBMITTED.")
+        "Environmental Modelling and Software, 117: 100-108.")
 )

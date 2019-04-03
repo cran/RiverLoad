@@ -1,7 +1,7 @@
 Package: RiverLoad
 Type: Package
 Title: Load Estimation of River Compounds with Different Methods
-Version: 1.0
+Version: 1.0.1
 Date: 2019-01-23
 Author: Veronica Nava [aut, cre], Martina Patelli [ctb], Marco Rotiroti [ctb], Barbara Leoni [ctb]
 Maintainer: Veronica Nava <veronicanava245@gmail.com>
@@ -12,6 +12,6 @@ LazyData: true
 Depends: R (>= 2.10)
 Imports: graphics, grDevices, stats
 NeedsCompilation: no
-Packaged: 2019-01-23 11:49:57 UTC; Veronica
+Packaged: 2019-04-03 10:19:01 UTC; Veronica
 Repository: CRAN
-Date/Publication: 2019-02-01 16:53:22 UTC
+Date/Publication: 2019-04-03 11:30:03 UTC

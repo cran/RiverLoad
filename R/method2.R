@@ -11,7 +11,7 @@ mat.conc[,i-2]<-((notNA$flow)*(notNA[,i])/nrow(notNA))
 sumCQ<-colSums(mat.conc)
 if (i==(2+ncomp))
 break}
-difference<-as.numeric(db[nrow(db),1]-db[1,1])
+difference<-difftime(db[nrow(db),1], db[1,1], units="days")
 method2<-(sumCQ*(difference)*86400)
 mat.meth<-matrix(nrow=1, ncol=(ncomp))
 mat.met<-matrix(method2, nrow=1, ncol=ncomp)

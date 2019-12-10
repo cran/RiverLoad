@@ -19,7 +19,7 @@ dbsel.eliminationNA<-notNA[,-c(1,2)]
 prodflowconc<-vrmcd*dbsel.eliminationNA
 loadperiod<-apply(prodflowconc, 2, sum)
 nday<-nrow(notNA)
-differ<-as.numeric(db[nrow(db),1]-db[1,1])
+differ<-difftime(db[nrow(db),1], db[1,1], units="days")
 method3<-(loadperiod/nday)*differ
 mat.met<-matrix(nrow=1, ncol=(ncomp))
 mat.met<-matrix(method3, nrow=1, ncol=ncomp)

@@ -12,7 +12,7 @@ if (i==(2+ncomp))
 break}
 sum.flow<-sum(notNA$flow)
 fluxM5gsec<-((sum.CQ/sum.flow)*mean(db$flow))
-difference<-as.numeric(db[nrow(db),1]-db[1,1])
+difference<-difftime(db[nrow(db),1], db[1,1], units="days")
 method5<-(fluxM5gsec*(difference)*86400)
 mat.met<-matrix(nrow=1, ncol=(ncomp))
 mat.met<-matrix(method5, nrow=1, ncol=ncomp)

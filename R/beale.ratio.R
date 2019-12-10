@@ -23,7 +23,7 @@ var.q<-var(inter$flow)
 bias.factor<-((1+((1/n)*(cov.lq/prod.lq)))/(1+(1/n)*(var.q/((mean.flow)^2))))
 beale<-load.factor*bias.factor
 beale<-matrix(beale, nrow=1, ncol=ncomp)
-differ<-as.numeric(db[nrow(db),1]-db[1,1])
+differ<-difftime(db[nrow(db),1], db[1,1], units="days")
 beale.ratio<-beale*86400*differ
 colnames(beale.ratio)<-c(names(db)[3:(ncomp+2)])
 method7N<-as.numeric(beale.ratio)

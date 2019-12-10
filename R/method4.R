@@ -12,7 +12,7 @@ if (i==(2+ncomp))
 break}
 mediaport<-mean(db$flow)
 fluxM4gsec<-(mediaport*conc.sum)
-difference<-as.numeric(db[nrow(db),1]-db[1,1])
+difference<-difftime(db[nrow(db),1], db[1,1], units="days")
 method4<-(fluxM4gsec*(difference)*86400)
 mat.met<-matrix(nrow=1, ncol=(ncomp))
 mat.met<-matrix(method4, nrow=1, ncol=ncomp)

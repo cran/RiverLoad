@@ -7,7 +7,7 @@ if (missing(period)) {
 mean.flow<-mean(inter$flow)
 sel.data<-inter[, -which(names(inter) %in% c("datetime", "flow", "newdate"))]
 mat.conc<-matrix(nrow=(nrow(inter)), ncol=(ncomp))
-load<-as.matrix(sel.data*as.vector(inter$flow))
+load<-as.matrix(sel.data*(inter$flow))
 mean.load<-apply(load, 2, mean)
 
 total.flow<-mean(db$flow)
@@ -15,7 +15,7 @@ total.flow<-mean(db$flow)
 load.factor<-total.flow*(mean.load/mean.flow)
 
 n<-nrow(inter)
-prod.lq<-mean.load*as.vector(mean.flow)
+prod.lq<-mean.load*(mean.flow)
 
 cov.lq<-cov(load, inter$flow)
 
@@ -47,7 +47,7 @@ flow.union<-aggregate(db$flow~newdate, db, mean)
 colnames(flow.union)[2]<-"flow"
 
 sel.inter<-inter[,-which(names(inter) %in% c("datetime", "flow", "newdate"))]
-load<-as.vector(inter$flow)*sel.inter
+load<-(inter$flow)*sel.inter
 
 bindload<-cbind.data.frame(inter$datetime, load)
 colnames(bindload)[1]<-"datetime"
@@ -63,7 +63,7 @@ merging<-merge(mat, flow.union, by="newdate")
 union.flow<-merging[,3]
 divlq<-loadmean/flow.inter
 prodlq<-loadmean*flow.inter
-load.factor<-as.vector(union.flow)*(divlq)
+load.factor<-(union.flow)*(divlq)
 n<-nrow(inter)
 
 covariance<-matrix(nrow=length(unique(bindload$datetime)), ncol=ncomp)
@@ -75,10 +75,10 @@ selbind<-bindload[,-1]
 mean.flow<-mean(inter$flow)
 sel.data<-inter[, -which(names(inter) %in% c("datetime", "flow", "newdate"))]
 mat.conc<-matrix(nrow=(nrow(inter)), ncol=(ncomp))
-load<-as.matrix(sel.data*as.vector(inter$flow))
+load<-as.matrix(sel.data*(inter$flow))
 mean.load<-apply(load, 2, mean)
 
-prod.lq<-mean.load*as.vector(mean.flow)
+prod.lq<-mean.load*(mean.flow)
 
 cov.lq<-cov(load, inter$flow)
 
@@ -120,7 +120,7 @@ flow.union<-aggregate(db$flow~newdate, db, mean)
 colnames(flow.union)[2]<-"flow"
 
 sel.inter<-inter[,-which(names(inter) %in% c("datetime", "flow", "newdate"))]
-load<-as.vector(inter$flow)*sel.inter
+load<-(inter$flow)*sel.inter
 
 bindload<-cbind.data.frame(inter$datetime, load)
 colnames(bindload)[1]<-"datetime"
@@ -137,17 +137,17 @@ merging<-merge(mat, flow.union, by="newdate")
 union.flow<-merging[,3]
 divlq<-loadmean/flow.inter
 prodlq<-loadmean*flow.inter
-load.factor<-as.vector(union.flow)*(divlq)
+load.factor<-(union.flow)*(divlq)
 n<-nrow(inter)
 
 
 mean.flow<-mean(inter$flow)
 sel.data<-inter[, -which(names(inter) %in% c("datetime", "flow", "newdate"))]
 mat.conc<-matrix(nrow=(nrow(inter)), ncol=(ncomp))
-load<-as.matrix(sel.data*as.vector(inter$flow))
+load<-as.matrix(sel.data*(inter$flow))
 mean.load<-apply(load, 2, mean)
 
-prod.lq<-mean.load*as.vector(mean.flow)
+prod.lq<-mean.load*(mean.flow)
 
 cov.lq<-cov(load, inter$flow)
 

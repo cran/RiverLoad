@@ -21,7 +21,7 @@ flow.union<-aggregate(otherunion$flow~newdate, otherunion, mean)
 colnames(flow.union)[2]<-"flow"
 
 sel.inter<-inter[,-which(names(inter) %in% c("datetime", "flow", "newdate"))]
-load<-as.vector(inter$flow)*sel.inter
+load<-(inter$flow)*sel.inter
 
 bindload<-cbind.data.frame(inter$datetime, load)
 colnames(bindload)[1]<-"datetime"
@@ -37,7 +37,7 @@ merging<-merge(mat, flow.union, by="newdate")
 union.flow<-merging[,3]
 divlq<-loadmean/flow.inter
 prodlq<-loadmean*flow.inter
-load.factor<-as.vector(union.flow)*(divlq)
+load.factor<-(union.flow)*(divlq)
 n<-nrow(inter)
 
 
@@ -101,7 +101,7 @@ flow.union<-aggregate(db$flow~newdate, db, mean)
 colnames(flow.union)[2]<-"flow"
 
 sel.inter<-inter[,-which(names(inter) %in% c("datetime", "flow", "newdate"))]
-load<-as.vector(inter$flow)*sel.inter
+load<-(inter$flow)*sel.inter
 
 bindload<-cbind.data.frame(inter$datetime, load)
 colnames(bindload)[1]<-"datetime"
@@ -116,7 +116,7 @@ if (i==(ncomp)) break}
 
 divlq<-loadmean/flow.inter
 prodlq<-loadmean*flow.inter
-load.factor<-as.vector(flow.union$flow)*(divlq)
+load.factor<-(flow.union$flow)*(divlq)
 n<-nrow(inter)
 
 

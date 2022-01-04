@@ -46,7 +46,7 @@ agg.dataQ$newdate<-as.POSIXct(agg.dataQ$newdate, format = c("%Y-%m-%d"))
 
 
 if (missing(period)){
-prodCQ<-as.matrix(concent[,-which(names(concent) %in% c("datetime"))]*as.vector(agg.dataQ[,"flow"]*86400))
+prodCQ<-as.matrix(concent[,-which(names(concent) %in% c("datetime"))]*(agg.dataQ[,"flow"]*86400))
 
 loadtot<-apply(prodCQ, 2, sum)
 method8<-as.numeric(loadtot)         
@@ -57,7 +57,7 @@ return(method8)
 
 
 else if(period=="month") {
-prodCQ<-as.matrix(concent[,-which(names(concent) %in% c("datetime"))]*as.vector(agg.dataQ[,"flow"]*86400))
+prodCQ<-as.matrix(concent[,-which(names(concent) %in% c("datetime"))]*(agg.dataQ[,"flow"]*86400))
 prodCQdate<-cbind.data.frame(agg.dataQ[,1], prodCQ)
 colnames(prodCQdate)[1]<-"newdate"
 prodCQdate$newdate<-format(as.POSIXct(prodCQdate$newdate), format="%Y-%m")
@@ -73,7 +73,7 @@ return(aggrg.data)
 }
 
 else if (period=="year"){
-prodCQ<-as.matrix(concent[,-which(names(concent) %in% c("datetime"))]*as.vector(agg.dataQ[,"flow"]*86400))
+prodCQ<-as.matrix(concent[,-which(names(concent) %in% c("datetime"))]*(agg.dataQ[,"flow"]*86400))
 prodCQdate<-cbind.data.frame(agg.dataQ[,1], prodCQ)
 colnames(prodCQdate)[1]<-"newdate"
 prodCQdate$newdate<-format(as.POSIXct(prodCQdate$newdate), format="%Y")

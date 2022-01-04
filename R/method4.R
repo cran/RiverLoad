@@ -68,7 +68,7 @@ bindyear<-cbind(year, agg.data1)
 nforyear<-aggregate(bindyear[,3]~year, bindyear, function(x) length(unique(x)))
 
 valueyear<-unique(year)
-load.data<-as.vector(bindyear[,-which(names(bindyear) %in% c("year", "newdate"))])
+load.data<-(bindyear[,-which(names(bindyear) %in% c("year", "newdate"))])
 for(i in 1:numbyear){
 ind<-which(bindyear$year==valueyear[i], arr.ind=T)
 flowsel<-subset(meanflowyear, year==valueyear[i])[,2]

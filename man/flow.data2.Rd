@@ -15,7 +15,7 @@ Dataframe with two columns: a first column with DateTime in standard format (yyy
   }
 }
 \source{
-\url{https://ncwqr.org/monitoring/data/
+\url{https://ncwqr.org/monitoring/
 }}
 \references{
 Heidelberg Tributary Loading Program (HTLP) and USGS, United States Geological Survey

@@ -16,7 +16,7 @@ Scattered concentration data of total phosphorus ("TP") of Sandusky River, Ohio.
   }
 }
 \source{
-\url{https://ncwqr.org/monitoring/data/
+\url{https://ncwqr.org/monitoring/
 }}
 \references{
 Heidelberg Tributary Loading Program (HTLP) and USGS, United States Geological Survey

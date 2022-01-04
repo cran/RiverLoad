@@ -10,7 +10,7 @@ mat.conc[,i-2]<-notNA[,i]/(nrow(notNA))
 conc.sumNA<-colSums(mat.conc)
 if (i==(2+ncomp))
 break}
-conc.sum<-as.vector(na.omit(conc.sumNA))
+conc.sum<-(na.omit(conc.sumNA))
 flow.n<-notNA$flow/(nrow(notNA))
 flow.sum<-sum(flow.n)
 flux.gsec<-(conc.sum*flow.sum)
@@ -69,7 +69,7 @@ aggrg.data1<-(aggregate(flow~newdate, flowdate, sum))
 aggrg.data2<-(aggregate(flow~newdate, flowdate, sum))
 aggrg.data2$newdate<-as.Date(paste(aggrg.data2$newdate, "-01", sep=""))
 aggrg.data2$newdate<-as.POSIXct(aggrg.data2$newdate, format ="%Y-%m")
-aggrg.flow<-as.vector(aggrg.data2[,-which(names(aggrg.data2) %in% c("newdate"))])
+aggrg.flow<-(aggrg.data2[,-which(names(aggrg.data2) %in% c("newdate"))])
 
 
 load<-(aggrg.flow*aggrg.data)
@@ -123,7 +123,7 @@ flowdate<-cbind.data.frame(notNA$datetime, flow.n)
 colnames(flowdate)<-c("datetime", "flow")
 flowdate$newdate<-format(as.POSIXct(flowdate$datetime), format="%Y")
 aggrg.data2<-(aggregate(flow~newdate, flowdate, sum))
-aggrg.flow<-as.vector(aggrg.data2[,-which(names(aggrg.data2) %in% c("newdate"))])
+aggrg.flow<-(aggrg.data2[,-which(names(aggrg.data2) %in% c("newdate"))])
 
 load<-(aggrg.flow*aggrg.data)
 is.leapyear=function(year) {return(((year %% 4==0) &(year%%100 !=0)) |(year %% 400==0))}

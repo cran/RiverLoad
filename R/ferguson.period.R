@@ -83,7 +83,7 @@ agg.dataQ<-aggregate(flow~newdate, db.u, mean)
 agg.dataQ$newdate<-as.POSIXct(agg.dataQ$newdate, format = c("%Y-%m-%d"))
 
 
-prodCQ<-as.matrix(concent[,-which(names(concent) %in% c("datetime"))]*as.vector(agg.dataQ[,"flow"]*86400))
+prodCQ<-as.matrix(concent[,-which(names(concent) %in% c("datetime"))]*(agg.dataQ[,"flow"]*86400))
 prodCQdate<-cbind.data.frame(agg.dataQ[,1], prodCQ)
 colnames(prodCQdate)[1]<-"newdate"
 prodCQdate$newdate<-format(as.POSIXct(prodCQdate$newdate), format="%Y-%m")
@@ -202,7 +202,7 @@ colnames(concent)[2:(ncomp+1)]<-c(names(db)[3:(ncomp+2)])}
 db.u$newdate<-format(as.POSIXct(db.u$datetime), format="%Y-%m-%d")
 agg.dataQ<-aggregate(flow~newdate, db.u, mean)
 agg.dataQ$newdate<-as.POSIXct(agg.dataQ$newdate, format = c("%Y-%m-%d"))
-prodCQ<-as.matrix(concent[,-which(names(concent) %in% c("datetime"))]*as.vector(agg.dataQ[,"flow"]*86400))
+prodCQ<-as.matrix(concent[,-which(names(concent) %in% c("datetime"))]*(agg.dataQ[,"flow"]*86400))
 prodCQdate<-cbind.data.frame(agg.dataQ[,1], prodCQ)
 colnames(prodCQdate)[1]<-"newdate"
 prodCQdate$newdate<-format(as.POSIXct(prodCQdate$newdate), format="%Y")
